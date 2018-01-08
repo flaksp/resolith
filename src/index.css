@@ -1,0 +1,40 @@
+a, abbr, address, area, article, aside, audio, b, bdi, bdo, blockquote, body, br, button, canvas, caption, cite, code, col, colgroup, data, datalist, dd, del, details, dfn, dialog, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, html, i, iframe, img, input, ins, kbd, label, legend, li, main, map, mark, meter, nav, noscript, object, ol, optgroup, option, output, p, param, picture, pre, progress, q, rp, rt, rtc, ruby, s, samp, section, select, slot, small, source, span, strong, sub, summary, sup, table, tbody, td, textarea, tfoot, th, thead, time, title, tr, track, u, ul, var, video, wbr {
+  all: initial;
+  display: block;
+}
+
+html, body {
+  height: 100vh;
+}
+
+body {
+  overflow: hidden;
+}
+
+.section {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+}
+
+.screen-resolution-landing {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.screen-resolution-landing__header {
+  font-size: 2rem;
+}
+
+.screen-resolution-landing__value {
+  font-size: 4rem;
+}
+
+.screen-resolution-landing__value:empty {
+  visibility: hidden;
+}
+
+.screen-resolution-landing__value:after {
+  content: 'px';
+}
