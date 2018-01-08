@@ -1,6 +1,6 @@
-import * as YandexMetrika from 'modules/YandexMetrika';
-import * as GoogleAnalytics from 'modules/GoogleAnalytics';
-import * as Sentry from 'modules/Sentry';
+import * as YandexMetrika from './modules/YandexMetrika';
+import * as GoogleAnalytics from './modules/GoogleAnalytics';
+import * as Sentry from './modules/Sentry';
 
 window.addEventListener('load', () => {
   let width  = window.screen.width * window.devicePixelRatio;

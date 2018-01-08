@@ -60,8 +60,8 @@ typings/
 # IntelliJ settings
 .idea
 
-# Parcel cache folder
-.cache
-
 # Distribution folder
 dist
+
+# Laravel Mix
+mix-manifest.json
