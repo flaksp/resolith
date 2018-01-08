@@ -24,11 +24,11 @@ body {
 }
 
 .screen-resolution-landing__header {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .screen-resolution-landing__value {
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 .screen-resolution-landing__value:empty {
