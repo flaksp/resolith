@@ -7,7 +7,8 @@ module.exports = {
     minify: {
       removeAttributeQuotes: true,
       collapseWhitespace: true,
-      removeComments: true
+      removeComments: true,
+      removeScriptTypeAttributes: true
     }
   },
   sourceMap: false,
