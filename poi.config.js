@@ -12,5 +12,8 @@ module.exports = {
     }
   },
   sourceMap: false,
-  browsers: pgk.browserslist
+  browsers: pgk.browserslist,
+  presets: [
+    require('poi-preset-offline')()
+  ]
 }
