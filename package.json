@@ -3,20 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "description": "A simple app that shows client's real screen resolution.",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "dev": "npm run development",
-    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "watch-poll": "npm run watch -- --watch-poll",
-    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "prod": "npm run production",
-    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    "start": "poi",
+    "build": "poi build"
   },
   "devDependencies": {
     "cross-env": "^5.1",
-    "html-minifier": "^3.5",
-    "laravel-mix": "^1.0"
+    "poi": "^9.6.12"
   },
   "repository": {
     "type": "git",
@@ -35,5 +29,11 @@
   "bugs": {
     "url": "https://github.com/ssimplix/resolith/issues"
   },
-  "homepage": "https://reso.lith.pw"
+  "homepage": "https://reso.lith.pw",
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "last 7 iOS versions",
+    "not ie <= 8"
+  ]
 }

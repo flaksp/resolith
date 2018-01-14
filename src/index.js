@@ -1,3 +1,4 @@
+import './index.css'
 import * as YandexMetrika from './modules/YandexMetrika';
 import * as GoogleAnalytics from './modules/GoogleAnalytics';
 import * as Sentry from './modules/Sentry';
