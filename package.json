@@ -9,7 +9,6 @@
     "build": "poi build"
   },
   "devDependencies": {
-    "cross-env": "^5.1",
     "poi": "^9.6.12"
   },
   "repository": {
