@@ -11,30 +11,23 @@ body {
   overflow: hidden;
 }
 
-.section {
+.slide {
   min-height: 100vh;
   width: 100%;
   display: flex;
-}
-
-.screen-resolution-landing {
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.screen-resolution-landing__header {
+.slide__secondary-text {
   font-size: 1.5rem;
 }
 
-.screen-resolution-landing__value {
+.slide__primary-text {
   font-size: 3rem;
 }
 
-.screen-resolution-landing__value:empty {
+.slide__primary-text:empty {
   visibility: hidden;
-}
-
-.screen-resolution-landing__value:after {
-  content: 'px';
 }
