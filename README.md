@@ -1,5 +1,7 @@
 # Resolith &mdash; "omg that's overhead" display web inspector
 
+[![Build status](https://img.shields.io/travis/ssimplix/resolith.svg)](https://travis-ci.org/ssimplix/resolith)
+
 When you google *"my screen resolution"* via your smartphone, all websites from the 1st page will mislead you. Damn, even guys with awesome domain names like [whatismyscreenresolution.com](https://www.whatismyscreenresolution.com) & [whatismyscreenresolution.net](http://whatismyscreenresolution.net)! Not optimized for mobile phones, filled with annoying ads and useless information &mdash; that's the web today. It's time to show people how frontend should look like.
 
 Resolith is...
