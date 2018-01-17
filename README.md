@@ -28,6 +28,16 @@ You are welcome to participate. We have great plans:
 
 Please note: the project is hosted on VPS with nginx. Its configuration will be published later.
 
+## Benchmarks
+
+### Google PageSpeed Insights
+
+[![Google PageSpeed Insights for desktop](https://pagespeed-badges.herokuapp.com/?url=https://reso.lith.pw&showStratLabel=true&strat=desktop)](https://developers.google.com/speed/pagespeed/insights/?url=https://reso.lith.pw) [![Google PageSpeed Insights for mobile](https://pagespeed-badges.herokuapp.com/?url=https://reso.lith.pw&showStratLabel=true&strat=mobile)](https://developers.google.com/speed/pagespeed/insights/?url=https://reso.lith.pw&tab=mobile)
+
+### Lighthouse
+
+TODO. See issue [#5](https://github.com/ssimplix/resolith/issues/5).
+
 ## People about Resolith
 
 > Finally I know my iPhone's screen resolution!
