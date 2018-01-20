@@ -1,4 +1,5 @@
-const pgk = require('./package')
+const pgk = require('./package');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: pgk.main,
@@ -15,5 +16,10 @@ module.exports = {
   browsers: pgk.browserslist,
   presets: [
     require('poi-preset-offline')()
-  ]
-}
+  ],
+  webpack(config) {
+    config.plugins.push(new Dotenv());
+
+    return config;
+  }
+};

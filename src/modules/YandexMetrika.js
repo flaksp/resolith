@@ -1,7 +1,7 @@
 export function initialize() {
   try {
-    let yaCounter47230383 = new Ya.Metrika({
-      id: 47230383,
+    let yaCounter = new Ya.Metrika({
+      id: process.env.YANDEX_METRIKA_ID,
       clickmap: true,
       trackLinks: true,
       accurateTrackBounce: true

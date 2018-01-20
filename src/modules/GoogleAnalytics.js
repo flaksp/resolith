@@ -6,5 +6,5 @@ export function initialize() {
   }
 
   gtag('js', new Date());
-  gtag('config', 'UA-63968909-10');
+  gtag('config', process.env.GOOGLE_ANALYTICS_ID);
 }

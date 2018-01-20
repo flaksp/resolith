@@ -36,5 +36,8 @@
     "last 2 versions",
     "last 7 iOS versions",
     "not ie <= 8"
-  ]
+  ],
+  "dependencies": {
+    "dotenv-webpack": "^1.5.4"
+  }
 }
