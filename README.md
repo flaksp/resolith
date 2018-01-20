@@ -26,7 +26,7 @@ You are welcome to participate. We have great plans:
   * Pingdom: in plans.
   * Google PageSpeed Insights: in plans.
 
-Please note: the project is hosted on VPS with nginx. Its configuration will be published later.
+Please note: the project is hosted on [GitHub Pages](https://pages.github.com) with [Cloudflare](https://www.cloudflare.com/) configured.
 
 ## Benchmarks
 
