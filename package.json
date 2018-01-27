@@ -6,7 +6,9 @@
   "main": "src/app.js",
   "scripts": {
     "start": "poi",
-    "build": "poi build"
+    "build": "poi build",
+    "lint": "eslint .",
+    "test": "npm run lint"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
