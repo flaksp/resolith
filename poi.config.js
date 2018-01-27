@@ -15,6 +15,10 @@ module.exports = {
       removeScriptTypeAttributes: true
     }
   },
+  filename: {
+    js: '[name]-[hash:8].js',
+    css: '[name]-[hash:8].css'
+  },
   sourceMap: false,
   browsers: pgk.browserslist,
   presets: [
