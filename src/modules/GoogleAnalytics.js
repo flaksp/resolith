@@ -1,10 +1,8 @@
-'use strict';
-
-export function initialize() {
+export default function initialize() {
   window.dataLayer = window.dataLayer || [];
 
-  function gtag() {
-    dataLayer.push(arguments);
+  function gtag(...args) {
+    window.dataLayer.push(args);
   }
 
   gtag('js', new Date());

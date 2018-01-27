@@ -1,5 +1,3 @@
-'use strict';
-
-export function initialize() {
-  Raven.config(process.env.SENTRY_DSN).install();
+export default function initialize() {
+  window.Raven.config(process.env.SENTRY_DSN).install();
 }

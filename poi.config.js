@@ -1,7 +1,6 @@
-'use strict';
-
 const pgk = require('./package');
 const Dotenv = require('dotenv-webpack');
+const poiPresetOffline = require('poi-preset-offline');
 
 module.exports = {
   entry: pgk.main,
@@ -12,23 +11,23 @@ module.exports = {
       removeAttributeQuotes: true,
       collapseWhitespace: true,
       removeComments: true,
-      removeScriptTypeAttributes: true
-    }
+      removeScriptTypeAttributes: true,
+    },
   },
   filename: {
     js: '[name]-[hash:8].js',
-    css: '[name]-[hash:8].css'
+    css: '[name]-[hash:8].css',
   },
   sourceMap: false,
   browsers: pgk.browserslist,
   presets: [
-    require('poi-preset-offline')()
+    poiPresetOffline(),
   ],
   webpack(config) {
     config.plugins.push(new Dotenv({
-      systemvars: true
+      systemvars: true,
     }));
 
     return config;
-  }
+  },
 };

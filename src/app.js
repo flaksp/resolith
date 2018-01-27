@@ -11,7 +11,7 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 window.addEventListener('load', () => {
-  YandexMetrika.initialize();
-  GoogleAnalytics.initialize();
-  Sentry.initialize();
+  YandexMetrika();
+  GoogleAnalytics();
+  Sentry();
 });

@@ -1,4 +1,34 @@
-'use strict';
+/**
+ * If device rotated in portrait (vertical) orientation.
+ *
+ * @returns {boolean}
+ */
+export function isPortraitOrientation() {
+  return window.screen.width < window.screen.height;
+}
+
+/**
+ * Nexus 5X returns wrong devicePixelRatio in all browsers.
+ *
+ * @returns {boolean}
+ */
+function isNexus5() {
+  return window.devicePixelRatio === 2.625 && isPortraitOrientation()
+    ? (window.screen.width === 412 && window.screen.height === 732)
+    : (window.screen.width === 732 && window.screen.height === 412);
+}
+
+/**
+ * Nexus 6 returns wrong devicePixelRatio in all browsers.
+ *
+ * @returns {boolean}
+ */
+function isNexus6() {
+  return window.devicePixelRatio === 3.5 && isPortraitOrientation()
+    ? (window.screen.width === 412 && window.screen.height === 732)
+    : (window.screen.width === 732 && window.screen.height === 412);
+}
+
 
 /**
  * Returns screen resolution.
@@ -6,7 +36,7 @@
  * @returns {*[]}
  */
 export function getResolution() {
-  let width  = window.screen.width * window.devicePixelRatio;
+  let width = window.screen.width * window.devicePixelRatio;
   let height = window.screen.height * window.devicePixelRatio;
 
   if (isNexus5()) {
@@ -26,35 +56,4 @@ export function getResolution() {
   }
 
   return [width, height];
-}
-
-/**
- * If device rotated in portrait (vertical) orientation.
- *
- * @returns {boolean}
- */
-export function isPortraitOrientation() {
-  return window.screen.width < window.screen.height;
-}
-
-/**
- * Nexus 5X returns wrong devicePixelRatio in all browsers.
- *
- * @returns {boolean}
- */
-function isNexus5() {
-  return window.devicePixelRatio === 2.625 && isPortraitOrientation()
-      ? (window.screen.width === 412 && window.screen.height === 732)
-      : (window.screen.width === 732 && window.screen.height === 412);
-}
-
-/**
- * Nexus 6 returns wrong devicePixelRatio in all browsers.
- *
- * @returns {boolean}
- */
-function isNexus6() {
-  return window.devicePixelRatio === 3.5 && isPortraitOrientation()
-      ? (window.screen.width === 412 && window.screen.height === 732)
-      : (window.screen.width === 732 && window.screen.height === 412);
 }
