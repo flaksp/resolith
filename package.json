@@ -9,6 +9,10 @@
     "build": "poi build"
   },
   "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "eslint": "^4.16.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
     "offline-plugin": "^4.9.0",
     "poi": "^9.6.12",
     "poi-preset-offline": "^9.0.3"
