@@ -7,6 +7,7 @@ module.exports = {
   entry: pgk.main,
   html: {
     title: pgk.name,
+    template: 'src/app.ejs',
     minify: {
       removeAttributeQuotes: true,
       collapseWhitespace: true,

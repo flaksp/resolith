@@ -1,6 +1,6 @@
 'use strict';
 
-import './index.css'
+import './app.css'
 import * as Display from './modules/Display'
 import * as YandexMetrika from './modules/YandexMetrika';
 import * as GoogleAnalytics from './modules/GoogleAnalytics';

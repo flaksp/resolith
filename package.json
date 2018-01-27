@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "A simple app that shows client's real screen resolution.",
-  "main": "src/index.js",
+  "main": "src/app.js",
   "scripts": {
     "start": "poi",
     "build": "poi build"
