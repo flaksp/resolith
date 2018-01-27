@@ -1,3 +1,5 @@
+'use strict';
+
 export function initialize() {
   window.dataLayer = window.dataLayer || [];
 

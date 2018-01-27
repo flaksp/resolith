@@ -1,3 +1,5 @@
+'use strict';
+
 const pgk = require('./package');
 const Dotenv = require('dotenv-webpack');
 

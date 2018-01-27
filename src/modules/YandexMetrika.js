@@ -1,3 +1,5 @@
+'use strict';
+
 export function initialize() {
   try {
     let yaCounter = new Ya.Metrika({
