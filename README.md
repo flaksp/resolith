@@ -32,14 +32,12 @@ Please note: the project is hosted on [GitHub Pages](https://pages.github.com) w
 
 Benchmarks periodically run on remote server.
 
-### Google PageSpeed Insights
+### [Google PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
 
-[![Google PSI speed test for mobile](https://shields.lith.pw/resolith/badges/mobile-speed.svg)](https://developers.google.com/speed/pagespeed/insights/?url=https://reso.lith.pw&tab=mobile) 
-[![Google PSI usability test for mobile](https://shields.lith.pw/resolith/badges/mobile-usability.svg)](https://developers.google.com/speed/pagespeed/insights/?url=https://reso.lith.pw&tab=mobile) 
+[![Google PSI speed test for desktop](https://shields.lith.pw/resolith/badges/desktop-speed.svg)](https://developers.google.com/speed/pagespeed/insights/?url=https://reso.lith.pw) [![Google PSI speed test for mobile](https://shields.lith.pw/resolith/badges/mobile-speed.svg)](https://developers.google.com/speed/pagespeed/insights/?url=https://reso.lith.pw&tab=mobile) 
+[![Google PSI usability test for mobile](https://shields.lith.pw/resolith/badges/mobile-usability.svg)](https://developers.google.com/speed/pagespeed/insights/?url=https://reso.lith.pw&tab=mobile)
 
-[![Google PSI speed test for desktop](https://shields.lith.pw/resolith/badges/desktop-speed.svg)](https://developers.google.com/speed/pagespeed/insights/?url=https://reso.lith.pw)
-
-### Lighthouse
+### [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 
 ![Lighthouse Performance test](https://shields.lith.pw/resolith/badges/performance.svg) ![Lighthouse PWA test](https://shields.lith.pw/resolith/badges/pwa.svg) ![Lighthouse Accessibility test](https://shields.lith.pw/resolith/badges/accessibility.svg) ![Lighthouse Best Practices test](https://shields.lith.pw/resolith/badges/best-practices.svg) ![Lighthouse SEO test](https://shields.lith.pw/resolith/badges/seo.svg)
 
