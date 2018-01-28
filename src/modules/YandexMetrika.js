@@ -1,4 +1,4 @@
-export default function() {
+export default function () {
   window.yaCounter = new window.Ya.Metrika({
     id: process.env.YANDEX_METRIKA_ID,
     clickmap: true,

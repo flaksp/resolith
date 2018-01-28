@@ -1,4 +1,4 @@
-export default function() {
+export default function () {
   window.dataLayer = window.dataLayer || [];
 
   function gtag(...args) {
