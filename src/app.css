@@ -1,3 +1,7 @@
+:root {
+  --nagivation-arrows-height: 5rem;
+}
+
 a, abbr, address, area, article, aside, audio, b, bdi, bdo, blockquote, body, br, button, canvas, caption, cite, code, col, colgroup, data, datalist, dd, del, details, dfn, dialog, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, html, i, iframe, img, input, ins, kbd, label, legend, li, main, map, mark, meter, nav, noscript, object, ol, optgroup, option, output, p, param, picture, pre, progress, q, rp, rt, rtc, ruby, s, samp, section, select, slot, small, source, span, strong, sub, summary, sup, table, tbody, td, textarea, tfoot, th, thead, time, title, tr, track, u, ul, var, video, wbr {
   all: initial;
   display: block;
@@ -11,13 +15,25 @@ body {
   overflow: hidden;
 }
 
+/*
+ * Slides are listed here. They should come in same order as in HTML.
+ * The last slide will be shown as default one.
+ */
+#viewport:target,
+#scrollbar-width:target,
+#resolution:target {
+  z-index: 1;
+}
+
 .slide {
-  min-height: 100vh;
+  min-height: calc(100vh - var(--nagivation-arrows-height));
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  background: white;
 }
 
 .slide__secondary-text {
@@ -30,4 +46,25 @@ body {
 
 .slide__primary-text:empty {
   visibility: hidden;
+}
+
+.navigation-arrows {
+  height: var(--nagivation-arrows-height);
+  padding-top: calc(100vh - var(--nagivation-arrows-height));
+  display: flex;
+  flex-direction: row;
+}
+
+.navigation-arrows__arrow {
+  width: 50%;
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navigation-arrows__arrow:hover,
+.navigation-arrows__arrow:focus,
+.navigation-arrows__arrow:active {
+  background-color: #eee;
 }

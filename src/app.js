@@ -1,13 +1,25 @@
 import './app.css';
 import * as Display from './modules/Display';
+import * as Navigation from './modules/Navigation';
 import YandexMetrika from './modules/YandexMetrika';
 import GoogleAnalytics from './modules/GoogleAnalytics';
 import Sentry from './modules/Sentry';
 
 window.addEventListener('DOMContentLoaded', () => {
-  const [width, height] = Display.getResolution();
+  const [resolutionWidth, resolitionHeight] = Display.getResolution();
 
-  document.getElementById('resolution').innerHTML = `${width}&times;${height}`;
+  document.querySelector('#resolution .slide__primary-text').innerHTML = `${resolutionWidth}&times;${resolitionHeight}`;
+
+  const [viewportWidth, viewportHeight] = Display.getViewport();
+
+  document.querySelector('#viewport .slide__primary-text').innerHTML = `${viewportWidth}&times;${viewportHeight}`;
+
+  document.querySelector('#scrollbar-width .slide__primary-text').innerHTML = Display.getScrollbarWidth();
+
+  Navigation.updateNavigationArrows(
+    Navigation.getPreviousSlideId(),
+    Navigation.getNextSlideId(),
+  );
 });
 
 window.addEventListener('load', () => {
@@ -15,3 +27,14 @@ window.addEventListener('load', () => {
   GoogleAnalytics();
   Sentry();
 });
+
+window.addEventListener('hashchange', () => {
+  if (Navigation.getSlideByCurrentHash() === null) {
+    return; // Hash doesn't match any slide.
+  }
+
+  Navigation.updateNavigationArrows(
+    Navigation.getPreviousSlideId(),
+    Navigation.getNextSlideId(),
+  );
+}, false);

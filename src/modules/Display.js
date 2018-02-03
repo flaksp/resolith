@@ -57,3 +57,37 @@ export function getResolution() {
 
   return [width, height];
 }
+
+/**
+ * Returns browser's scrollbar width.
+ *
+ * @returns {int}
+ */
+export function getScrollbarWidth() {
+  const outerContainer = document.createElement('div');
+  outerContainer.style.visibility = 'hidden';
+  outerContainer.style.width = '100px';
+  document.body.appendChild(outerContainer);
+
+  const widthWithoutScroll = outerContainer.offsetWidth;
+
+  outerContainer.style.overflow = 'scroll';
+
+  const innerContainer = document.createElement('div');
+  innerContainer.style.width = '100%';
+
+  outerContainer.appendChild(innerContainer);
+
+  const widthWithScroll = innerContainer.offsetWidth;
+
+  outerContainer.parentNode.removeChild(outerContainer);
+
+  return widthWithoutScroll - widthWithScroll;
+}
+
+export function getViewport() {
+  return [
+    Math.max(document.documentElement.clientWidth, window.innerWidth || 0),
+    Math.max(document.documentElement.clientHeight, window.innerHeight || 0),
+  ];
+}

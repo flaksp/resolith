@@ -13,6 +13,21 @@ module.exports = {
       removeComments: true,
       removeScriptTypeAttributes: true,
     },
+    variables: {
+      slides: [{
+        id: 'viewport',
+        textBeforeValue: 'Your viewport is',
+        textAfterValue: 'CSS pixels',
+      }, {
+        id: 'scrollbar-width',
+        textBeforeValue: 'Your browser\'s scrollbar width is',
+        textAfterValue: 'CSS pixels',
+      }, {
+        id: 'resolution',
+        textBeforeValue: 'Your screen resolution is',
+        textAfterValue: 'native pixels',
+      }],
+    },
   },
   filename: {
     js: '[name]-[hash:8].js',
