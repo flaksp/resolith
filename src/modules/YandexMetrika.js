@@ -4,5 +4,6 @@ export default function () {
     clickmap: true,
     trackLinks: true,
     accurateTrackBounce: true,
+    trackHash: true,
   });
 }
