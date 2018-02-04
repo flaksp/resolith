@@ -21,7 +21,7 @@ module.exports = {
       }, {
         id: 'scrollbar-width',
         textBeforeValue: 'Your browser\'s scrollbar width is',
-        textAfterValue: 'CSS pixels',
+        textAfterValue: 'native pixels',
       }, {
         id: 'resolution',
         textBeforeValue: 'Your screen resolution is',
