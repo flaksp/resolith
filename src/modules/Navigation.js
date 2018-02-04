@@ -1,3 +1,6 @@
+export const LEFT_ARROW_KEY = 'ArrowLeft';
+export const RIGHT_ARROW_KEY = 'ArrowRight';
+
 export function getSlideByCurrentHash() {
   if (window.location.hash === '') {
     // If no hash specified, we define last slide as default

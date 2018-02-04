@@ -38,3 +38,17 @@ window.addEventListener('hashchange', () => {
     Navigation.getNextSlideId(),
   );
 }, false);
+
+
+window.addEventListener('keydown', (event) => {
+  const pressedKey = event.key;
+
+  if (pressedKey !== Navigation.LEFT_ARROW_KEY
+      && pressedKey !== Navigation.RIGHT_ARROW_KEY) {
+    return;
+  }
+
+  window.location.hash = pressedKey === Navigation.LEFT_ARROW_KEY
+    ? `#${Navigation.getPreviousSlideId()}`
+    : `#${Navigation.getNextSlideId()}`;
+});
