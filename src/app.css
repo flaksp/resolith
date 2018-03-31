@@ -23,6 +23,7 @@ body {
  * Slides are listed here. They should come in same order as in HTML.
  * The last slide will be shown as default one.
  */
+#aspect-ratio:target,
 #viewport:target,
 #scrollbar-width:target,
 #resolution:target {

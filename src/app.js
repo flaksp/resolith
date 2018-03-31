@@ -6,14 +6,22 @@ import GoogleAnalytics from './modules/GoogleAnalytics';
 import Sentry from './modules/Sentry';
 
 window.addEventListener('DOMContentLoaded', () => {
+  // Resolution
   const [resolutionWidth, resolitionHeight] = Display.getResolution();
 
   document.querySelector('#resolution .slide__primary-text').innerHTML = `${resolutionWidth}&times;${resolitionHeight}`;
 
+  // Aspect ratio
+  const [aspectRatioX, aspectRatioY] = Display.getAspectRatio();
+
+  document.querySelector('#aspect-ratio .slide__primary-text').innerHTML = `${aspectRatioX}&times;${aspectRatioY}`;
+
+  // Viewport
   const [viewportWidth, viewportHeight] = Display.getViewport();
 
   document.querySelector('#viewport .slide__primary-text').innerHTML = `${viewportWidth}&times;${viewportHeight}`;
 
+  // Scrollbar width
   document.querySelector('#scrollbar-width .slide__primary-text').innerHTML = Display.getScrollbarWidth();
 
   Navigation.updateNavigationArrows(

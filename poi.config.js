@@ -15,6 +15,10 @@ module.exports = {
     },
     variables: {
       slides: [{
+        id: 'aspect-ratio',
+        textBeforeValue: 'Your aspect ratio is',
+        textAfterValue: '&nbsp;',
+      }, {
         id: 'viewport',
         textBeforeValue: 'Your viewport is',
         textAfterValue: 'CSS pixels',

@@ -91,3 +91,27 @@ export function getViewport() {
     Math.max(document.documentElement.clientHeight, window.innerHeight || 0),
   ];
 }
+
+function gcd(a, b) {
+  return (b === 0) ? a : gcd(b, a % b);
+}
+
+function isFloat(n) {
+  return Number(n) === n && n % 1 !== 0;
+}
+
+export function getAspectRatio() {
+  const [resolutionWidth, resolutionHeight] = getResolution();
+
+  const ratio = gcd(resolutionWidth, resolutionHeight);
+
+  let aspectRatioX = resolutionWidth / ratio;
+  let aspectRatioY = resolutionHeight / ratio;
+
+  if (isFloat(aspectRatioX) || isFloat(aspectRatioY)) {
+    aspectRatioX = aspectRatioX.toFixed(2);
+    aspectRatioY = aspectRatioY.toFixed(2);
+  }
+
+  return [aspectRatioX, aspectRatioY];
+}
