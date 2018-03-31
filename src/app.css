@@ -1,5 +1,7 @@
 :root {
-  --nagivation-arrows-height: 5rem;
+  --z-index-navigation-arrows: 100;
+
+  --nagivation-arrows-height: 75px;
 }
 
 a, abbr, address, area, article, aside, audio, b, bdi, bdo, blockquote, body, br, button, canvas, caption, cite, code, col, colgroup, data, datalist, dd, del, details, dfn, dialog, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, html, i, iframe, img, input, ins, kbd, label, legend, li, main, map, mark, meter, nav, noscript, object, ol, optgroup, option, output, p, param, picture, pre, progress, q, rp, rt, rtc, ruby, s, samp, section, select, slot, small, source, span, strong, sub, summary, sup, table, tbody, td, textarea, tfoot, th, thead, time, title, tr, track, u, ul, var, video, wbr {
@@ -9,7 +11,7 @@ a, abbr, address, area, article, aside, audio, b, bdi, bdo, blockquote, body, br
 }
 
 html, body {
-  height: 100vh;
+  height: 100%;
 }
 
 body {
@@ -28,7 +30,7 @@ body {
 }
 
 .slide {
-  min-height: calc(100vh - var(--nagivation-arrows-height));
+  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -51,20 +53,34 @@ body {
 }
 
 .navigation-arrows {
-  height: var(--nagivation-arrows-height);
-  padding-top: calc(100vh - var(--nagivation-arrows-height));
+  width: 100%;
   display: flex;
   flex-direction: row;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: var(--z-index-navigation-arrows);
 }
 
 .navigation-arrows__arrow {
   width: 50%;
-  font-size: 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-size: 0;
   cursor: default;
+  line-height: var(--nagivation-arrows-height);
   height: var(--nagivation-arrows-height);
+  text-align: center;
+  vertical-align: middle;
+
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.navigation-arrows__arrow--left {
+  background-image: url('~material-design-icons/navigation/svg/production/ic_arrow_back_48px.svg');
+}
+
+.navigation-arrows__arrow--right {
+  background-image: url('~material-design-icons/navigation/svg/production/ic_arrow_forward_48px.svg');
 }
 
 .navigation-arrows__arrow:hover,
