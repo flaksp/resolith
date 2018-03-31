@@ -5,7 +5,7 @@ import YandexMetrika from './modules/YandexMetrika';
 import GoogleAnalytics from './modules/GoogleAnalytics';
 import Sentry from './modules/Sentry';
 
-window.addEventListener('DOMContentLoaded', () => {
+function calculateScreenProperties() {
   // Resolution
   const [resolutionWidth, resolitionHeight] = Display.getResolution();
 
@@ -23,11 +23,19 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Scrollbar width
   document.querySelector('#scrollbar-width .slide__primary-text').innerHTML = Display.getScrollbarWidth();
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  calculateScreenProperties();
 
   Navigation.updateNavigationArrows(
     Navigation.getPreviousSlideId(),
     Navigation.getNextSlideId(),
   );
+});
+
+window.addEventListener('resize', () => {
+  calculateScreenProperties();
 });
 
 window.addEventListener('load', () => {
