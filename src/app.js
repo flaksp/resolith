@@ -76,7 +76,7 @@ document.querySelectorAll('.slide__primary-text').forEach((element) => {
     if (navigator.share !== undefined) {
       navigator.share({
         title: document.title,
-        text: element.text,
+        text: element.parentElement.textContent,
         url: window.location,
       });
     }

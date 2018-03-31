@@ -57,9 +57,9 @@
         <main class="container">
             <% for (let i = 0; i < htmlWebpackPlugin.options.variables.slides.length; i++) { %>
                 <section class="slide" id="<%= htmlWebpackPlugin.options.variables.slides[i].id %>">
-                    <h1 class="slide__secondary-text">
+                    <span class="slide__secondary-text">
                         <%= htmlWebpackPlugin.options.variables.slides[i].textBeforeValue %>
-                    </h1>
+                    </span>
 
                     <strong class="slide__primary-text"></strong>
 
