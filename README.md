@@ -1,6 +1,6 @@
 # Resolith &mdash; "omg that's overhead" display web inspector
 
-[![Build status](https://api.travis-ci.org/ssimplix/resolith.svg)](https://travis-ci.org/ssimplix/resolith) [![Dependencies](https://david-dm.org/ssimplix/resolith.svg)](https://david-dm.org/ssimplix/resolith) [![Development dependencies](https://david-dm.org/ssimplix/resolith/dev-status.svg)](https://david-dm.org/ssimplix/resolith?type=dev)
+[![Build status](https://api.travis-ci.org/neluzhin/resolith.svg)](https://travis-ci.org/neluzhin/resolith) [![Dependencies](https://david-dm.org/neluzhin/resolith.svg)](https://david-dm.org/neluzhin/resolith) [![Development dependencies](https://david-dm.org/neluzhin/resolith/dev-status.svg)](https://david-dm.org/neluzhin/resolith?type=dev)
 
 When you google *"my screen resolution"* via your smartphone, all websites from the 1st page will mislead you. Damn, even guys with awesome domain names like [whatismyscreenresolution.com](https://www.whatismyscreenresolution.com) & [whatismyscreenresolution.net](http://whatismyscreenresolution.net)! Not optimized for mobile phones, filled with annoying ads and useless information &mdash; that's the web today. It's time to show people how frontend should look like.
 
