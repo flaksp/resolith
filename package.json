@@ -7,8 +7,7 @@
   "scripts": {
     "start": "poi",
     "build": "poi build",
-    "lint": "eslint .",
-    "test": "npm run lint"
+    "lint": "eslint ."
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",

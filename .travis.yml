@@ -1,21 +1,7 @@
-language: node_js
+language: 'node_js'
 node_js:
-- "stable"
-cache:
-  directories:
-  - node_modules
-script:
-- npm test
-- npm run build
-- echo "$PUBLIC_DOMAIN" >> dist/CNAME
-deploy:
-  provider: pages
-  skip-cleanup: true
-  github-token: $GITHUB_TOKEN
-  keep-history: true
-  local_dir: dist
-  on:
-    branch: master
+- 'stable'
+
 env:
   global:
   - YANDEX_METRIKA_ID=47230383
@@ -24,3 +10,28 @@ env:
   - PUBLIC_DOMAIN=reso.lith.pw
   - YANDEX_SITE_VERIFICATION_TOKEN=12b37e57da29060c
   - GOOGLE_SITE_VERIFICATION_TOKEN=N8zcDQCuwg72t6DFlB8xTFYdWVEUR9dEGCtFzKgQTJ0
+
+cache:
+  directories:
+  - 'node_modules'
+
+jobs:
+  include:
+  - stage: 'lint'
+    script:
+    - 'yarn lint'
+
+  - stage: 'build'
+    script:
+    - 'yarn build'
+    - 'echo "$PUBLIC_DOMAIN" >> dist/CNAME'
+
+  - stage: 'deploy'
+    deploy:
+      provider: 'pages'
+      skip-cleanup: 'true'
+      github-token: $GITHUB_TOKEN
+      keep-history: true
+      local_dir: 'dist'
+      on:
+        branch: 'master'
