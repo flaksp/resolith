@@ -1,11 +1,6 @@
 {
     "name": "Resolith",
     "short_name": "Resolith",
-    "start_url": "./",
-    "orientation": "portrait",
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
-    "display": "standalone",
     "icons": [
         {
             "src": "/android-chrome-36x36.png",
@@ -52,5 +47,8 @@
             "sizes": "512x512",
             "type": "image/png"
         }
-    ]
+    ],
+    "theme_color": "#24292e",
+    "background_color": "#24292e",
+    "display": "standalone"
 }
