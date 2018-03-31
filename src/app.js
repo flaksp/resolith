@@ -68,3 +68,17 @@ window.addEventListener('keydown', (event) => {
     ? `#${Navigation.getPreviousSlideId()}`
     : `#${Navigation.getNextSlideId()}`;
 });
+
+document.querySelectorAll('.slide__primary-text').forEach((element) => {
+  element.addEventListener('click', () => {
+    window.getSelection().selectAllChildren(element);
+
+    if (navigator.share !== undefined) {
+      navigator.share({
+        title: document.title,
+        text: element.text,
+        url: window.location,
+      });
+    }
+  });
+});

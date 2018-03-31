@@ -47,6 +47,7 @@ body {
 
 .slide__primary-text {
   font-size: 3rem;
+  cursor: copy;
 }
 
 .slide__primary-text:empty {

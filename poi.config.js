@@ -16,19 +16,19 @@ module.exports = {
     variables: {
       slides: [{
         id: 'aspect-ratio',
-        textBeforeValue: 'Your aspect ratio is',
+        textBeforeValue: 'Aspect ratio is',
         textAfterValue: '&nbsp;',
       }, {
         id: 'viewport',
-        textBeforeValue: 'Your viewport is',
+        textBeforeValue: 'Viewport is',
         textAfterValue: 'CSS pixels',
       }, {
         id: 'scrollbar-width',
-        textBeforeValue: 'Your browser\'s scrollbar width is',
+        textBeforeValue: 'Browser\'s scrollbar width is',
         textAfterValue: 'native pixels',
       }, {
         id: 'resolution',
-        textBeforeValue: 'Your screen resolution is',
+        textBeforeValue: 'Screen resolution is',
         textAfterValue: 'native pixels',
       }],
     },
