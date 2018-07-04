@@ -21,15 +21,15 @@ module.exports = {
       }, {
         id: 'viewport',
         textBeforeValue: 'Viewport is',
-        textAfterValue: 'CSS pixels',
+        textAfterValue: 'pixels',
       }, {
         id: 'scrollbar-width',
-        textBeforeValue: 'Browser\'s scrollbar width is',
-        textAfterValue: 'native pixels',
+        textBeforeValue: 'Browser\'s scrollbar margin is',
+        textAfterValue: 'pixels',
       }, {
         id: 'resolution',
         textBeforeValue: 'Screen resolution is',
-        textAfterValue: 'native pixels',
+        textAfterValue: 'pixels',
       }],
     },
   },
