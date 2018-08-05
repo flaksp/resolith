@@ -34,6 +34,7 @@ jobs:
 
   - stage: 'Application deploy'
     name: 'Upload to GitHub Pages'
+    if: branch = master
     deploy:
       provider: 'pages'
       skip-cleanup: 'true'
