@@ -16,18 +16,24 @@ cache:
   - 'node_modules'
   - 'dist'
 
+install:
+- npm install
+
 jobs:
   include:
-  - stage: 'lint'
+  - stage: 'Code analysis'
+    name: 'Lint code using ESLint'
     script:
-    - 'yarn lint'
+    - 'npm run lint'
 
-  - stage: 'build'
+  - stage: 'Preparing application'
+    name: 'Build application'
     script:
-    - 'yarn build'
+    - 'npm run build'
     - 'echo "$PUBLIC_DOMAIN" >> dist/CNAME'
 
-  - stage: 'deploy'
+  - stage: 'Application deploy'
+    name: 'Upload to GitHub Pages'
     deploy:
       provider: 'pages'
       skip-cleanup: 'true'
@@ -36,3 +42,4 @@ jobs:
       local_dir: 'dist'
       on:
         branch: 'master'
+
