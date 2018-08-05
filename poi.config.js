@@ -1,6 +1,6 @@
 const poiPresetOffline = require('poi-preset-offline');
-const pgk = require('./package');
 const Dotenv = require('dotenv-webpack');
+const pgk = require('./package');
 
 module.exports = {
   entry: pgk.main,
