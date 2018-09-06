@@ -4,6 +4,8 @@ node_js:
 
 env:
   global:
+  - DOCKER_HUB_REGISTRY_USER=neluzhin
+  - DOCKER_HUB_REPOSITORY_ID=$DOCKER_HUB_REGISTRY_USER/resolith
   - YANDEX_METRIKA_ID=47230383
   - GOOGLE_ANALYTICS_ID=UA-63968909-10
   - SENTRY_DSN=https://c394c49fafda419598e3d47991816fc7@sentry.io/268009
@@ -33,7 +35,7 @@ jobs:
     - 'echo "$PUBLIC_DOMAIN" >> dist/CNAME'
 
   - stage: 'Application deploy'
-    name: 'Upload to GitHub Pages'
+    name: 'Deploy to GitHub Pages'
     if: branch = master
     deploy:
       provider: 'pages'
@@ -44,3 +46,10 @@ jobs:
       on:
         branch: 'master'
 
+  - stage: 'Application deploy'
+    name: 'Upload to Docker Hub'
+    if: tag IS present
+    script:
+    - docker login --username "$DOCKER_HUB_REGISTRY_USER" --password "$DOCKER_HUB_REGISTRY_PASSWORD"
+    - docker build --tag $DOCKER_HUB_REPOSITORY_ID:$TRAVIS_TAG .
+    - docker push $DOCKER_HUB_REPOSITORY_ID:$TRAVIS_TAG
