@@ -2,7 +2,7 @@
 
 [![Build status](https://api.travis-ci.org/neluzhin/resolith.svg)](https://travis-ci.org/neluzhin/resolith)
 [![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg?maxAge=604800)](https://renovatebot.com/)
-[![Docker image](https://img.shields.io/badge/docker-image-0db7ed.svg?maxAge=604800)](https://hub.docker.com/r/neluzhin/resolith/)
+[![Docker image](https://img.shields.io/docker/build/neluzhin/resolith.svg?maxAge=300)](https://hub.docker.com/r/neluzhin/resolith/)
 
 When you google *"my screen resolution"* via your smartphone, all websites from the 1st page will mislead you. Damn, even guys with awesome domain names like [whatismyscreenresolution.com](https://www.whatismyscreenresolution.com) & [whatismyscreenresolution.net](http://whatismyscreenresolution.net)! Not optimized for mobile phones, filled with annoying ads and useless information &mdash; that's the web today. It's time to show people how frontend should look like.
 
