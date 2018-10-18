@@ -15,12 +15,17 @@ cache:
   directories:
   - 'node_modules'
   - 'dist'
-
-install:
-- npm install
+  
+# Disable automatic magic dependency installation
+install: true
 
 jobs:
   include:
+  - stage: 'Installing dependencies'
+    name: 'Install NPM dependencies'
+    script:
+    - 'npm install'
+  
   - stage: 'Code analysis'
     name: 'Lint code using ESLint'
     script:
