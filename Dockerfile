@@ -1,26 +1,12 @@
-FROM alpine:3.9
+FROM node:8.15.1-alpine as build
 
-# Update system packages
-RUN apk update && apk upgrade
-
-# Install Node.js and NPM
-RUN apk add --upgrade nodejs \
-  nodejs-npm
+WORKDIR /var/www/html
 
 # Copy git repository files to image
-COPY . /var/app
+COPY . /var/www/html
 
-# Build an app
-RUN cd /var/app && npm install --production && npm run build
-RUN mkdir -p /var/www/html/
-RUN mv -f /var/app/dist/* /var/www/html/
-RUN rm -rf /var/app/*
+RUN npm install --production && npm run build && npm cache clean --force
 
-# Clear NPM cache
-RUN npm cache clean --force
+FROM alpine:3.9
 
-RUN apk del nodejs \
-  nodejs-npm
-
-# Clear APK cache
-RUN rm -rf /var/cache/apk/*
+COPY --from=build /var/www/html/dist /var/www/html
