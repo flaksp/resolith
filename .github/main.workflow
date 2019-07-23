@@ -35,6 +35,9 @@ action "app/configure-cname" {
   ]
   uses = "actions/bin/sh@master"
   args = ["echo $PUBLIC_DOMAIN >> dist/CNAME"]
+  secrets = [
+    "PUBLIC_DOMAIN"
+  ]
 }
 
 action "lint/eslint" {
