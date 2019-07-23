@@ -19,15 +19,19 @@ action "app/build" {
     "dependencies/npm"
   ]
   uses = "docker://node:8.16.0-alpine"
-  args = ["node_modules/.bin/gulp"]
+  args = ["node_modules/.bin/poi", "build"]
   secrets = [
     "GOOGLE_ANALYTICS_ID",
     "YANDEX_METRIKA_ID",
     "GOOGLE_SITE_VERIFICATION_TOKEN",
     "YANDEX_SITE_VERIFICATION_TOKEN",
-    "PUBLIC_DOMAIN",
     "SENTRY_DSN"
   ]
+}
+
+action "app/configure-cname" {
+  uses = "actions/bin/sh@master"
+  args = ["echo $PUBLIC_DOMAIN >> dist/CNAME"]
 }
 
 action "lint/eslint" {
@@ -40,7 +44,8 @@ action "lint/eslint" {
 
 action "actions/filter-branch" {
   needs = [
-    "app/build"
+    "app/build",
+    "app/configure-cname"
   ]
   uses = "actions/bin/filter@master"
   args = "branch master"
