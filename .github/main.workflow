@@ -30,6 +30,9 @@ action "app/build" {
 }
 
 action "app/configure-cname" {
+  needs = [
+    "app/build"  
+  ]
   uses = "actions/bin/sh@master"
   args = ["echo $PUBLIC_DOMAIN >> dist/CNAME"]
 }
