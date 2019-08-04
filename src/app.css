@@ -75,6 +75,12 @@ body {
   z-index: var(--z-index-navigation-arrows);
 }
 
+@media (prefers-color-scheme: dark) {
+    .navigation-arrows {
+        filter: invert(100%);
+    }
+}
+
 .navigation-arrows__arrow {
   width: 50%;
   font-size: 0;
