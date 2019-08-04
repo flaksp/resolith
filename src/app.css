@@ -1,7 +1,17 @@
 :root {
+  --text-color: rgba(0, 0, 0, 0.84);
+  --background-color: #fff;
+
   --z-index-navigation-arrows: 100;
 
   --nagivation-arrows-height: 75px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: rgba(255, 255, 255, 0.84);
+    --background-color: #000;
+  }
 }
 
 a, abbr, address, area, article, aside, audio, b, bdi, bdo, blockquote, body, br, button, canvas, caption, cite, code, col, colgroup, data, datalist, dd, del, details, dfn, dialog, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, html, i, iframe, img, input, ins, kbd, label, legend, li, main, map, mark, meter, nav, noscript, object, ol, optgroup, option, output, p, param, picture, pre, progress, q, rp, rt, rtc, ruby, s, samp, section, select, slot, small, source, span, strong, sub, summary, sup, table, tbody, td, textarea, tfoot, th, thead, time, title, tr, track, u, ul, var, video, wbr {
@@ -12,6 +22,7 @@ a, abbr, address, area, article, aside, audio, b, bdi, bdo, blockquote, body, br
 
 html, body {
   height: 100%;
+  color: var(--text-color);
 }
 
 body {
@@ -38,7 +49,7 @@ body {
   align-items: center;
   justify-content: center;
   position: absolute;
-  background: white;
+  background: var(--background-color);
 }
 
 .slide__secondary-text {
@@ -78,10 +89,12 @@ body {
 }
 
 .navigation-arrows__arrow--left {
+  background-color: white;
   background-image: url('~material-design-icons/navigation/svg/production/ic_arrow_back_48px.svg');
 }
 
 .navigation-arrows__arrow--right {
+  background-color: white;
   background-image: url('~material-design-icons/navigation/svg/production/ic_arrow_forward_48px.svg');
 }
 
