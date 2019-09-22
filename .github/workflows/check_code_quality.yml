@@ -1,0 +1,29 @@
+name: Quality assurance
+
+on: push
+
+jobs:
+  npm:
+    name: npm
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@master
+
+      - name: Install npm dependencies
+        uses: actions/npm@master
+        with:
+          args: install
+
+      - name: Lint with eslint
+        run: node_modules/.bin/eslint .
+
+      - name: Build application
+        run: node_modules/.bin/poi build
+        env:
+          GOOGLE_ANALYTICS_ID: ${{ secrets.GOOGLE_ANALYTICS_ID }}
+          YANDEX_METRIKA_ID: ${{ secrets.YANDEX_METRIKA_ID }}
+          GOOGLE_SITE_VERIFICATION_TOKEN: ${{ secrets.GOOGLE_SITE_VERIFICATION_TOKEN }}
+          YANDEX_SITE_VERIFICATION_TOKEN: ${{ secrets.YANDEX_SITE_VERIFICATION_TOKEN }}
+          SENTRY_DSN: ${{ secrets.SENTRY_DSN }}

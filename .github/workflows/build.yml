@@ -1,0 +1,74 @@
+name: Build
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  github_docker_registry:
+    name: GitHub Docker Registry
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@master
+
+    - name: Login to Docker registry
+      uses: actions/docker/login@master
+      env:
+        DOCKER_USERNAME: ${{ github.actor }}
+        DOCKER_PASSWORD: ${{ secrets.GPR_TOKEN }}
+        DOCKER_REGISTRY_URL: docker.pkg.github.com
+
+    - name: Build Docker image
+      uses: actions/docker/cli@master
+      with:
+        args: build --file Dockerfile --tag base --build-arg GIT_SHA=${GITHUB_SHA} .
+
+    - name: Tag Docker image
+      uses: actions/docker/tag@master
+      env:
+        DOCKER_IMAGE: docker.pkg.github.com/${{ github.repository }}/app
+
+      with:
+        args: base ${DOCKER_IMAGE}
+
+    - name: Push Docker image
+      uses: actions/docker/cli@master
+      env:
+        DOCKER_IMAGE: docker.pkg.github.com/${{ github.repository }}/app
+
+      with:
+        args: push ${DOCKER_IMAGE}
+
+  github_pages:
+    name: GitHub Pages
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@master
+
+      - name: Install npm dependencies
+        uses: actions/npm@master
+        with:
+          args: install
+
+      - name: Build application
+        run: node_modules/.bin/poi build
+        env:
+          GOOGLE_ANALYTICS_ID: ${{ secrets.GOOGLE_ANALYTICS_ID }}
+          YANDEX_METRIKA_ID: ${{ secrets.YANDEX_METRIKA_ID }}
+          GOOGLE_SITE_VERIFICATION_TOKEN: ${{ secrets.GOOGLE_SITE_VERIFICATION_TOKEN }}
+          YANDEX_SITE_VERIFICATION_TOKEN: ${{ secrets.YANDEX_SITE_VERIFICATION_TOKEN }}
+          SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
+
+      - name: Add CNAME file
+        run: echo ${{ secrets.PUBLIC_DOMAIN }} >> dist/CNAME
+
+      - name: Deploy
+        uses: maxheld83/ghpages@v0.2.1
+        env:
+          BUILD_DIR: dist/
+          GH_PAT: ${{ secrets.GPR_TOKEN }}
