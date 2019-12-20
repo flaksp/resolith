@@ -7,7 +7,7 @@ COPY . /var/www/html
 
 RUN npm install --production && npm run build && npm cache clean --force
 
-FROM alpine:3.10
+FROM alpine:3.11.0
 
 ARG GIT_SHA
 ENV GIT_SHA $GIT_SHA
