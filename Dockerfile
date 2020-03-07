@@ -5,7 +5,13 @@ WORKDIR /var/www/html
 # Copy git repository files to image
 COPY . /var/www/html
 
-RUN npm install --production && npm run build && npm cache clean --force
+ARG GOOGLE_ANALYTICS_ID
+ARG YANDEX_METRIKA_ID
+ARG GOOGLE_SITE_VERIFICATION_TOKEN
+ARG YANDEX_SITE_VERIFICATION_TOKEN
+ARG SENTRY_DSN
+
+RUN npm ci --production && npm run build && npm cache clean --force
 
 FROM alpine:3.10
 

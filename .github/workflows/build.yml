@@ -15,32 +15,33 @@ jobs:
       uses: actions/checkout@master
 
     - name: Login to Docker registry
-      uses: actions/docker/login@master
+      run: echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin docker.pkg.github.com
       env:
         DOCKER_USERNAME: ${{ github.actor }}
         DOCKER_PASSWORD: ${{ secrets.GPR_TOKEN }}
-        DOCKER_REGISTRY_URL: docker.pkg.github.com
 
     - name: Build Docker image
-      uses: actions/docker/cli@master
-      with:
-        args: build --file Dockerfile --tag base --build-arg GIT_SHA=${GITHUB_SHA} .
+      run: >
+        docker build
+        --file Dockerfile
+        --tag base
+        --build-arg GIT_SHA="$GITHUB_SHA"
+        --build-arg GOOGLE_ANALYTICS_ID="${{ secrets.GOOGLE_ANALYTICS_ID }}"
+        --build-arg YANDEX_METRIKA_ID="${{ secrets.YANDEX_METRIKA_ID }}"
+        --build-arg GOOGLE_SITE_VERIFICATION_TOKEN="${{ secrets.GOOGLE_SITE_VERIFICATION_TOKEN }}"
+        --build-arg YANDEX_SITE_VERIFICATION_TOKEN="${{ secrets.YANDEX_SITE_VERIFICATION_TOKEN }}"
+        --build-arg SENTRY_DSN="${{ secrets.SENTRY_DSN }}"
+        .
 
     - name: Tag Docker image
-      uses: actions/docker/tag@master
+      run: docker tag base ${DOCKER_IMAGE}:${GITHUB_SHA}
       env:
-        DOCKER_IMAGE: docker.pkg.github.com/${{ github.repository }}/app
-
-      with:
-        args: base ${DOCKER_IMAGE}
+        DOCKER_IMAGE: docker.pkg.github.com/${{ github.repository }}/resolith
 
     - name: Push Docker image
-      uses: actions/docker/cli@master
+      run: docker push ${DOCKER_IMAGE}
       env:
-        DOCKER_IMAGE: docker.pkg.github.com/${{ github.repository }}/app
-
-      with:
-        args: push ${DOCKER_IMAGE}
+        DOCKER_IMAGE: docker.pkg.github.com/${{ github.repository }}/resolith
 
   github_pages:
     name: GitHub Pages
@@ -50,10 +51,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@master
 
-      - name: Install npm dependencies
-        uses: actions/npm@master
+      - name: Setup Node.js
+        uses: actions/setup-node@master
         with:
-          args: install
+          node-version: '12.x'
+
+      - name: Install npm dependencies
+        run: npm ci --production
 
       - name: Build application
         run: node_modules/.bin/poi build
