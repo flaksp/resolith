@@ -36,6 +36,7 @@ body {
  */
 #aspect-ratio:target,
 #viewport:target,
+#device-pixel-ratio:target,
 #scrollbar-width:target,
 #resolution:target {
   z-index: 1;

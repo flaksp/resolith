@@ -23,6 +23,10 @@ module.exports = {
         textBeforeValue: 'Viewport is',
         textAfterValue: 'pixels',
       }, {
+        id: 'device-pixel-ratio',
+        textBeforeValue: 'Device pixel ratio is',
+        textAfterValue: '&nbsp;',
+      }, {
         id: 'scrollbar-width',
         textBeforeValue: 'Browser\'s scrollbar margin is',
         textAfterValue: 'pixels',

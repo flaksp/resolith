@@ -69,3 +69,7 @@ export function getAspectRatio() {
 
   return [aspectRatioX, aspectRatioY];
 }
+
+export function getDevicePixelRatio() {
+  return window.devicePixelRatio;
+}

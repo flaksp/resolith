@@ -21,6 +21,9 @@ function calculateScreenProperties() {
 
   document.querySelector('#viewport .slide__primary-text').innerHTML = `${viewportWidth}&times;${viewportHeight}`;
 
+  // Device pixel ratio
+  document.querySelector('#device-pixel-ratio .slide__primary-text').innerHTML = Display.getDevicePixelRatio();
+
   // Scrollbar width
   document.querySelector('#scrollbar-width .slide__primary-text').innerHTML = Display.getScrollbarWidth();
 }
