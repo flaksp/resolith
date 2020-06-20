@@ -34,7 +34,7 @@ jobs:
         .
 
     - name: Tag Docker image
-      run: docker tag base ${DOCKER_IMAGE}:${GITHUB_SHA}
+      run: docker tag base ${DOCKER_IMAGE}:build-${{ github.run_number }}
       env:
         DOCKER_IMAGE: docker.pkg.github.com/${{ github.repository }}/resolith
 
