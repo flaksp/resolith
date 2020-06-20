@@ -23,6 +23,7 @@ a, abbr, address, area, article, aside, audio, b, bdi, bdo, blockquote, body, br
 html, body {
   height: 100%;
   color: var(--text-color);
+  -webkit-text-fill-color: var(--text-color);
 }
 
 body {
