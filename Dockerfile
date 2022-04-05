@@ -13,7 +13,7 @@ ARG SENTRY_DSN
 
 RUN npm ci --production && npm run build && npm cache clean --force
 
-FROM alpine:3.12.1
+FROM alpine:3.15.4
 
 ARG GIT_SHA
 ENV GIT_SHA $GIT_SHA
